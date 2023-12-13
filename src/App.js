@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { AgGridReact } from "ag-grid-react";
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-quartz.css";
+import { rowData, colDefs } from "../src/constants/Data";
 
-function App() {
+const GridExample = () => {
+  const [gridApi, setGridApi] = useState([]);
+  const defaultColDef = {
+    sortable: true,
+    editable: true,
+    filter: true,
+    floatingFilter: true,
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-black h-[100vh] flex flex-col justify-center items-center gap-5">
+      <div className="ag-theme-quartz h-[50vh] w-[80vw]">
+        <AgGridReact
+          rowData={rowData}
+          columnDefs={colDefs}
+          defaultColDef={defaultColDef}
+          onGridReady={({ api }) => setGridApi(api)}
+        />
+      </div>
+      <button
+        className="bg-white px-5 py-2 rounded-lg font-bold text-lg"
+        onClick={() => gridApi.exportDataAsCsv()}
+      >
+        Export
+      </button>
     </div>
   );
-}
+};
 
-export default App;
+export default GridExample;
