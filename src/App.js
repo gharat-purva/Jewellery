@@ -13,6 +13,10 @@ const GridExample = () => {
     floatingFilter: true,
   };
 
+
+
+
+
   return (
     <div className="bg-black h-[100vh] flex flex-col justify-center items-center gap-5">
       <div className="ag-theme-quartz h-[50vh] w-[80vw]">
