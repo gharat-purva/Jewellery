@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { AgGridReact } from "ag-grid-react";
-import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-quartz.css";
+import { AgGridReact } from "@ag-grid-community/react";
+import { AllModules } from "@ag-grid-enterprise/all-modules"; // Import necessary ag-Grid modules
+import "@ag-grid-community/styles/ag-grid.css";
+import "@ag-grid-community/styles/ag-theme-quartz.css";
 import { rowData, colDefs } from "../src/constants/Data";
 
 const GridExample = () => {
-  const [gridApi, setGridApi] = useState([]);
+  const [gridApi, setGridApi] = useState(null);
   const defaultColDef = {
     sortable: true,
     editable: true,
@@ -16,10 +17,6 @@ const GridExample = () => {
     rowSelection: 'multiple',
   };
 
-
-
-
-
   return (
     <div className="bg-black h-[100vh] flex flex-col justify-center items-center gap-5">
       <div className="ag-theme-quartz h-[50vh] w-[80vw]">
@@ -27,6 +24,7 @@ const GridExample = () => {
           rowData={rowData}
           columnDefs={colDefs}
           defaultColDef={defaultColDef}
+          modules={AllModules} // Pass ag-Grid modules
           onGridReady={({ api }) => setGridApi(api)}
         />
       </div>
