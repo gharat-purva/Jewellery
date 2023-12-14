@@ -11,6 +11,9 @@ const GridExample = () => {
     editable: true,
     filter: true,
     floatingFilter: true,
+    checkboxSelection: true,
+    headerCheckboxSelection: true,
+    rowSelection: 'multiple',
   };
 
 
