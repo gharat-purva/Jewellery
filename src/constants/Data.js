@@ -759,7 +759,7 @@ export const rowData=[
     },
     {
      "Item Nos": 79,
-     "Jewelry Type": "Earring",
+     "Jewelry Type": "EarRing",
      "BRAND": "Tiffany",
      "Metal": "K18",
      "Gross Wt.": 10.9,
@@ -947,7 +947,7 @@ export const rowData=[
     },
     {
      "Item Nos": 98,
-     "Jewelry Type": "Earring",
+     "Jewelry Type": "EarRing",
      "BRAND": "Vancleef&Ar pels",
      "Detail": "ALHAMBRA",
      "Metal": "K18WG",
@@ -6141,15 +6141,16 @@ export const rowData=[
    ];
 
 
-   export const colDefs=[
-        { field: 'Item Nos'},
-        {field: 'Jewelry Type'},
-        { field: 'BRAND'},
-        { field: 'Size #'},
-        { field: 'Detail'},
-        {field: 'Particulars'},
-        { field: 'Metal'},
-        { field: 'Gross Wt.'},
-        { field: 'Start Price in US $'},
-        {field: 'Remarks'}
-      ];
+  export const colDefs = [
+  { headerCheckboxSelection: true, checkboxSelection: true, width: 40 },
+  { headerName: "Item Nos", field: "itemNos", sortable: true, filter: true },
+  { headerName: "Jewelry Type", field: "jewelryType", sortable: true, filter: true, filterParams: { values: ["Bangle", "Necklace", "Cuffs", "Bracelet", "Ring", "Pierce", "Pin", "Pendant Top"] } },
+  { headerName: "BRAND", field: "brand", sortable: true, filter: true, filterParams: { values: ["Tiffany", "Cartier", "Boucheron", "Gucci", "Grisogono", "Bvlgari"] } },
+  { headerName: "Size #", field: "size", sortable: true, filter: true },
+  { headerName: "Detail", field: "detail", sortable: true, filter: true },
+  { headerName: "Particulars", field: "particulars", sortable: true, filter: true },
+  { headerName: "Metal", field: "metal", sortable: true, filter: true },
+  { headerName: "Gross Wt", field: "grossWt", sortable: true, filter: true },
+  { headerName: "Start Price In US $", field: "startPrice", sortable: true, filter: true },
+  { headerName: "Remarks", field: "remarks", sortable: true, filter: true },
+];
