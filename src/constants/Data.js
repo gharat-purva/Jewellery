@@ -1,5 +1,5 @@
 export const rowData=[
-  
+   
     {
      "Item Nos": 1,
      "Jewelry Type": "Bangle",
@@ -6146,7 +6146,7 @@ export const rowData=[
         {field: 'Jewelry Type'},
         { field: 'BRAND'},
         { field: 'Size #'},
-        { field: 'Column5'},
+        { field: 'Detail'},
         {field: 'Particulars'},
         { field: 'Metal'},
         { field: 'Gross Wt.'},
